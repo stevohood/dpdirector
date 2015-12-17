@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DP Director - Dashboard</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#"><img src="img/logo2.png" height="48px">
+                </a>
+                <ul class="user-menu">
+                    <li class="dropdown pull-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a>
+                            </li>
+                            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a>
+                            </li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+   <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <div id="username">
+								<h1><img src="img/user1.jpg" width="60px"></h1>
+                                <h1>Jane Doe</h1>
+                                <p>Director of Photography</p>
+							</div>
+		<form role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+		</form>
+		<ul class="nav menu">
+			<li class="current_page_item"><a href="#"><img src="png/home.png" height="16px"> Dashboard</a></li>
+									<li><a href="#"><img src="png/lens.png" height="16px"> Find Projects</a></li>
+									<li><a href="#"><img src="png/user.png" height="16px"> My Profile</a></li>
+									<li><a href="#"><img src="png/camera.png" height="16px"> My Cameras</a></li>
+                                    <li><a href="#"><img src="png/check-list.png" height="16px"> My Equipment List</a></li>
+                                    <li><a href="#"><img src="png/eye.png" height="16px"> Project Lookout</a></li>
+                                    <li><a href="/map.html"><img src="png/map.png" height="16px"> Project Map</a></li>
+                                    <li><a href="#"><img src="png/tag.png" height="16px"> Bookmarked Projects</a></li>
+                                    <li><a href="#"><img src="png/play.png" height="16px"> My Videos</a></li>
+                                    <li><a href="#"><img src="png/cloud-upload.png" height="16px"> Upload</a></li>
+                                    <li><a href="/messages.html"><img src="png/email-open.png" height="16px"> Messages</a></li>
+                                    <li><a href="#"><img src="png/settings.png" height="16px"> Account Settings</a></li>
+			<li class="parent ">
+				<a href="#">
+					<span class="glyphicon glyphicon-user"></span>My Clients <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span> 
+				</a>
+				<ul class="children collapse" id="sub-item-1">
+					<li>
+						<a class="" href="#">
+							<span class="glyphicon glyphicon-user"></span> John Doe
+						</a>
+					</li>
+					<li>
+						<a class="" href="#">
+							<span class="glyphicon glyphicon-user"></span> Neil Ray
+						</a>
+					</li>
+					<li>
+						<a class="" href="#">
+							<span class="glyphicon glyphicon-user"></span> Tina Lewis
+						</a>
+					</li>
+                    <li>
+						<a class="" href="#">
+							<span class="glyphicon glyphicon-plus"></span> Add New
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li role="presentation" class="divider"></li>
+			<li><a href="login.html"><span class="glyphicon glyphicon-gear"></span>My Account</a></li>
+		</ul>
+	</div>
+    <!--/.sidebar-->
+
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Dashboard</h1>
+            </div>
+        </div>
+        <!--/.row-->
+
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-blue panel-widget ">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <em class="glyphicon glyphicon-star glyphicon-l"></em>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">120</div>
+                            <div class="text-muted">Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-orange panel-widget">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <em class="glyphicon glyphicon-comment glyphicon-l"></em>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">52</div>
+                            <div class="text-muted">New Messages</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-teal panel-widget">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <em class="glyphicon glyphicon-user glyphicon-l"></em>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">24</div>
+                            <div class="text-muted">Profile Views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+                <div class="panel panel-red panel-widget">
+                    <div class="row no-padding">
+                        <div class="col-sm-3 col-lg-5 widget-left">
+                            <em class="glyphicon glyphicon-stats glyphicon-l"></em>
+                        </div>
+                        <div class="col-sm-9 col-lg-7 widget-right">
+                            <div class="large">725</div>
+                            <div class="text-muted">Jobs Nearby</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Project Leads and Inquiries</div>
+                    <div class="panel-body">
+                        <!--
+						<div class="canvas-wrapper">
+							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
+						</div>
+					-->
+                        <table data-toggle="table" data-url="tables/data1.json" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="bs-checkbox " style="width: 90px; ">
+                                        <div class="th-inner ">Date</div>
+                                        <div class="fht-cell"></div>
+                                    </th>
+                                    <th class="bs-checkbox " style="width: 100px; ">
+                                        <div class="th-inner ">Status</div>
+                                        <div class="fht-cell"></div>
+                                    </th>
+                                    <th style="">
+                                        <div class="th-inner sortable">Project Name</div>
+                                        <div class="fht-cell"></div>
+                                    </th>
+                                    <th style="">
+                                        <div class="th-inner sortable">Project Contact<span class="order"><span class="caret" style="margin: 10px 5px;"></span></span>
+                                        </div>
+                                        <div class="fht-cell"></div>
+                                    </th>
+                                    <th style="">
+                                        <div class="th-inner sortable">Production Notes</div>
+                                        <div class="fht-cell"></div>
+                                    </th>
+                                    <th class="bs-checkbox " style="width: 100px; ">
+                                        <div class="th-inner ">Message</div>
+                                        <div class="fht-cell"></div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="no-records-found">
+                                    <td>10-1-15</td>
+                                    <td><strong>Booked</strong>
+                                    </td>
+                                    <td>Brown Bag</td>
+                                    <td>Frank Musa 412-576-7763</td>
+                                    <td>Production</td>
+                                    <td>
+                                        <div class="btn-group">
+										  <button type="button" class="btn btn-info">More</button>
+										  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										    <span class="caret"></span>
+										    <span class="sr-only">Toggle Dropdown</span>
+										  </button>
+										  <ul class="dropdown-menu">
+										    <li><a href="#">View Project</a></li>
+										    <li><a href="#">Update Info</a></li>
+										    <li><a href="#">Job Board</a></li>
+										    <li role="separator" class="divider"></li>
+										    <li><a href="#">Send Message</a></li>
+										  </ul>
+										</div>
+                                    </td>
+                                </tr>
+                                <tr class="alert bg-danger">
+									<td>10-1-15</td>
+                                    <td><strong>Booked</strong>
+                                    </td>
+                                    <td>Brown Bag</td>
+                                    <td>Frank Musa 412-576-7763</td>
+                                    <td>Production</td>
+                                    <td>
+                                        <div class="btn-group">
+										  <button type="button" class="btn btn-info">More</button>
+										  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										    <span class="caret"></span>
+										    <span class="sr-only">Toggle Dropdown</span>
+										  </button>
+										  <ul class="dropdown-menu">
+										    <li><a href="#">View Project</a></li>
+										    <li><a href="#">Update Info</a></li>
+										    <li><a href="#">Job Board</a></li>
+										    <li role="separator" class="divider"></li>
+										    <li><a href="#">Send Message</a></li>
+										  </ul>
+										</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10-12-15</td>
+                                    <td><strong>Booked</strong>
+                                    </td>
+                                    <td>Brown Bag</td>
+                                    <td>Frank Musa 412-576-7763</td>
+                                    <td>Production</td>
+									<td>
+                                        <div class="btn-group">
+										  <button type="button" class="btn btn-info">More</button>
+										  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										    <span class="caret"></span>
+										    <span class="sr-only">Toggle Dropdown</span>
+										  </button>
+										  <ul class="dropdown-menu">
+										    <li><a href="#">View Project</a></li>
+										    <li><a href="#">Update Info</a></li>
+										    <li><a href="#">Job Board</a></li>
+										    <li role="separator" class="divider"></li>
+										    <li><a href="#">Send Message</a></li>
+										  </ul>
+										</div>
+                                    </td>
+                                </tr>
+                                <tr class="alert bg-success">
+                                    <td>10-14-15</td>
+                                    <td><strong>Booked</strong>
+                                    </td>
+                                    <td>Brown Bag</td>
+                                    <td>Jake Thomas 412-576-7763</td>
+                                    <td>Production</td>
+                                    <td>
+                                        <div class="btn-group">
+										  <button type="button" class="btn btn-info">More</button>
+										  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										    <span class="caret"></span>
+										    <span class="sr-only">Toggle Dropdown</span>
+										  </button>
+										  <ul class="dropdown-menu">
+										    <li><a href="#">View Project</a></li>
+										    <li><a href="#">Update Info</a></li>
+										    <li><a href="#">Job Board</a></li>
+										    <li role="separator" class="divider"></li>
+										    <li><a href="#">Send Message</a></li>
+										  </ul>
+										</div>
+                                    </td>
+                                </tr>
+                                <tr class="no-records-found">
+                                    <td>10-1-15</td>
+                                    <td><strong>Booked</strong>
+                                    </td>
+                                    <td>Brown Bag</td>
+                                    <td>Frank Musa 412-576-7763</td>
+                                    <td>Production</td>
+                                    <td>
+                                        <div class="btn-group">
+										  <button type="button" class="btn btn-info">More</button>
+										  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										    <span class="caret"></span>
+										    <span class="sr-only">Toggle Dropdown</span>
+										  </button>
+										  <ul class="dropdown-menu">
+										    <li><a href="#">View Project</a></li>
+										    <li><a href="#">Update Info</a></li>
+										    <li><a href="#">Job Board</a></li>
+										    <li role="separator" class="divider"></li>
+										    <li><a href="#">Send Message</a></li>
+										  </ul>
+										</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>Profile Updates</h4>
+                        <div class="easypiechart" id="easypiechart-blue" data-percent="92"><span class="percent">92%</span>
+                        </div>
+                        <btn class="btn btn-info">Update Profile</btn>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>Replies</h4>
+                        <div class="easypiechart" id="easypiechart-orange" data-percent="65"><span class="percent">65%</span>
+
+                        </div>
+                        <btn class="btn btn-info">(5)Messages</btn>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>Payments</h4>
+                        <div class="easypiechart" id="easypiechart-teal" data-percent="56"><span class="percent">56%</span>
+                        </div>
+                        <btn class="btn btn-info">View Payments</btn>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-body easypiechart-panel">
+                        <h4>To Do List</h4>
+                        <div class="easypiechart" id="easypiechart-red" data-percent="27"><span class="percent">27%</span>
+
+                        </div>
+                        <btn class="btn btn-info">View Tasks</btn>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+        <!--
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="panel panel-default chat">
+                    <div class="panel-heading" id="accordion"><span class="glyphicon glyphicon-comment"></span> Chat</div>
+                    <div class="panel-body">
+                        <ul>
+                            <li class="left clearfix">
+                                <span class="chat-img pull-left">
+									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+								</span>
+                                <div class="chat-body clearfix">
+                                    <div class="header">
+                                        <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="right clearfix">
+                                <span class="chat-img pull-right">
+									<img src="http://placehold.it/80/dde0e6/5f6468" alt="User Avatar" class="img-circle" />
+								</span>
+                                <div class="chat-body clearfix">
+                                    <div class="header">
+                                        <strong class="pull-left primary-font">Jane Doe</strong> <small class="text-muted">6 mins ago</small>
+                                    </div>
+                                    <p>
+                                        Mauris dignissim porta enim, sed commodo sem blandit non. Ut scelerisque sapien eu mauris faucibus ultrices. Nulla ac odio nisl. Proin est metus, interdum scelerisque quam eu, eleifend pretium nunc. Suspendisse finibus auctor lectus, eu interdum sapien.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="left clearfix">
+                                <span class="chat-img pull-left">
+									<img src="http://placehold.it/80/30a5ff/fff" alt="User Avatar" class="img-circle" />
+								</span>
+                                <div class="chat-body clearfix">
+                                    <div class="header">
+                                        <strong class="primary-font">John Doe</strong> <small class="text-muted">32 mins ago</small>
+                                    </div>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante turpis, rutrum ut ullamcorper sed, dapibus ac nunc. Vivamus luctus convallis mauris, eu gravida tortor aliquam ultricies.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="input-group">
+                            <input id="btn-input" type="text" class="form-control input-md" placeholder="Type your message here..." />
+                            <span class="input-group-btn">
+								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
+							</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        -->
+        <!--/.col-->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Jobs for You</div>
+                    <div class="panel-body">
+                        <div class="bootstrap-table">
+                            <div class="fixed-table-toolbar"></div>
+                            <div class="fixed-table-container">
+                                <div class="fixed-table-header">
+                                    <table></table>
+                                </div>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading" style="top: 37px; display: none;">Loading, please wait…</div>
+                                    <table data-toggle="table" id="table-style" data-url="tables/data2.json" data-row-style="rowStyle" class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center; ">
+                                                    <div class="th-inner ">Project Name</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th style="">
+                                                    <div class="th-inner ">Category</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th style="">
+                                                    <div class="th-inner ">Bid Range</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th style="width: 70px;">
+                                                    <div class="th-inner "> </div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="no-records-found">
+                                                <td><strong>Youtube Commercials for Blender<br></strong>Complete by Jan 1, 2015</td>
+                                                <td>Youtube Videos</td>
+                                                <td>$2000-$3000</td>
+                                                <td><btn class="btn btn-success">View</btn></td>
+                                            </tr>
+                                            <tr class="no-records-found">
+                                                <td><strong>Youtube Commercials for Blender<br></strong>Complete by Jan 1, 2015</td>
+                                                <td>Youtube Videos</td>
+                                                <td>$2000-$3000</td>
+                                                <td><btn class="btn btn-success">View</btn></td>
+                                            </tr>
+                                            <tr class="no-records-found">
+                                                <td><strong>Youtube Commercials for Blender<br></strong>Complete by Jan 1, 2015</td>
+                                                <td>Youtube Videos</td>
+                                                <td>$2000-$3000</td>
+                                                <td><btn class="btn btn-success">View</btn></td>
+                                            </tr>
+                                            <tr class="no-records-found">
+                                                <td><strong>Youtube Commercials for Blender<br></strong>Complete by Jan 1, 2015</td>
+                                                <td>Youtube Videos</td>
+                                                <td>$2000-$3000</td>
+                                                <td><btn class="btn btn-success">View</btn></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="fixed-table-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script>
+                            $(function() {
+                                $('#hover, #striped, #condensed').click(function() {
+                                    var classes = 'table';
+
+                                    if ($('#hover').prop('checked')) {
+                                        classes += ' table-hover';
+                                    }
+                                    if ($('#condensed').prop('checked')) {
+                                        classes += ' table-condensed';
+                                    }
+                                    $('#table-style').bootstrapTable('destroy')
+                                        .bootstrapTable({
+                                            classes: classes,
+                                            striped: $('#striped').prop('checked')
+                                        });
+                                });
+                            });
+
+                            function rowStyle(row, index) {
+                                var classes = ['active', 'success', 'info', 'warning', 'danger'];
+
+                                if (index % 2 === 0 && index / 2 < classes.length) {
+                                    return {
+                                        classes: classes[index / 2]
+                                    };
+                                }
+                                return {};
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="panel panel-blue">
+                    <div class="panel-heading dark-overlay"><span class="glyphicon glyphicon-check"></span>To-do List</div>
+                    <div class="panel-body">
+                        <ul class="todo-list">
+                            <li class="todo-list-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox">Make a plan for today</label>
+                                </div>
+                                <div class="pull-right action-buttons">
+                                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                                    <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                </div>
+                            </li>
+                            <li class="todo-list-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox">Update Basecamp</label>
+                                </div>
+                                <div class="pull-right action-buttons">
+                                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                                    <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                </div>
+                            </li>
+                            <li class="todo-list-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox">Send email to Jane</label>
+                                </div>
+                                <div class="pull-right action-buttons">
+                                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                                    <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                </div>
+                            </li>
+                            <li class="todo-list-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox">Drink coffee</label>
+                                </div>
+                                <div class="pull-right action-buttons">
+                                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                                    <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                </div>
+                            </li>
+                            <li class="todo-list-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox">Do some work</label>
+                                </div>
+                                <div class="pull-right action-buttons">
+                                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                                    <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                </div>
+                            </li>
+                            <li class="todo-list-item">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <label for="checkbox">Tidy up workspace</label>
+                                </div>
+                                <div class="pull-right action-buttons">
+                                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="flag"><span class="glyphicon glyphicon-flag"></span></a>
+                                    <a href="#" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="input-group">
+                            <input id="btn-input" type="text" class="form-control input-md" placeholder="Add new task" />
+                            <span class="input-group-btn">
+								<button class="btn btn-primary btn-md" id="btn-todo">Add</button>
+							</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.col-->
+        </div>
+        <!--/.row-->
+        <center>
+            <p>Copyright &copy; 2015 DP Director LLC - All Rights Reserved</p>
+        </center>
+    </div>
+    <!--/.main-->
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart-data.js"></script>
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script>
+        $('#calendar').datepicker({});
+
+        ! function($) {
+            $(document).on("click", "ul.nav li.parent > a > span.icon", function() {
+                $(this).find('em:first').toggleClass("glyphicon-minus");
+            });
+            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+        }(window.jQuery);
+
+        $(window).on('resize', function() {
+            if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+        })
+        $(window).on('resize', function() {
+            if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+        })
+    </script>
+</body>
+
+</html>
